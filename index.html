@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elnaz Heidari</title>
+<meta name="description" content="Elnaz Heidari is a machine learning researcher who builds physics-guided, explainable deep learning models for spatiotemporal forecasting.">
+<meta property="og:title" content="Elnaz Heidari, Machine Learning Researcher">
+<meta property="og:description" content="Physics-guided, explainable Transformers for spatiotemporal forecasting. Ph.D., Clemson · M.Sc. CS, Georgia Tech.">
+<meta property="og:image" content="https://elnazhdr.github.io/assets/img/elnaz.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6e8f'/%3E%3Cpath d='M4 20 L10 18 L14 9 L18 19 L22 15 L28 17' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f7f8;
+  --surface: #ffffff;
+  --surface-2: #eef3f5;
+  --text: #0f1b2a;
+  --muted: #536173;
+  --line: #dce3e8;
+  --accent: #0b6e8f;
+  --accent-soft: #e1f0f5;
+  --warm: #d9772f;
+  --warm-soft: rgba(217, 119, 47, .16);
+  --shadow: 0 1px 2px rgba(15, 27, 42, .04), 0 8px 24px rgba(15, 27, 42, .06);
+  --max: 1080px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a1219;
+    --surface: #101b25;
+    --surface-2: #142230;
+    --text: #e6edf3;
+    --muted: #93a4b5;
+    --line: #1f2d3b;
+    --accent: #52c3dd;
+    --accent-soft: #12303c;
+    --warm: #f0a063;
+    --warm-soft: rgba(240, 160, 99, .18);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a1219;
+  --surface: #101b25;
+  --surface-2: #142230;
+  --text: #e6edf3;
+  --muted: #93a4b5;
+  --line: #1f2d3b;
+  --accent: #52c3dd;
+  --accent-soft: #12303c;
+  --warm: #f0a063;
+  --warm-soft: rgba(240, 160, 99, .18);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+.feature > *, .split > *, .hero-grid > * { min-width: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+h1, h2, h3 { line-height: 1.2; }
+.serif { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -.01em; }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+nav .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); }
+nav .brand:hover { text-decoration: none; }
+nav .brand svg { flex: none; }
+nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+nav ul a { color: var(--muted); font-weight: 500; }
+nav ul a:hover { color: var(--text); text-decoration: none; }
+
+/* Hero */
+.hero { padding: 72px 0 0; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; align-items: center; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 16px;
+}
+.eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warm); box-shadow: 0 0 0 4px var(--warm-soft); }
+.hero h1 { font-size: clamp(42px, 6.4vw, 68px); margin: 0 0 18px; }
+.hero .lead { font-size: 19px; color: var(--muted); max-width: 620px; margin: 0 0 30px; }
+.hero .lead strong { color: var(--text); font-weight: 600; }
+.buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 10px; font-size: 14.5px; font-weight: 600;
+  border: 1px solid var(--line); color: var(--text); background: var(--surface);
+  transition: border-color .15s, transform .15s;
+}
+.btn:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn svg { width: 16px; height: 16px; }
+
+.portrait-wrap { position: relative; width: 260px; height: 260px; justify-self: end; }
+.portrait-wrap::before {
+  content: ""; position: absolute; inset: -10px; border-radius: 50%;
+  background: conic-gradient(from 200deg, var(--accent), var(--warm), var(--accent));
+  opacity: .9;
+}
+.portrait-wrap img {
+  position: relative; width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+  border: 6px solid var(--bg);
+}
+
+/* Hydrograph */
+.hydro { margin-top: 56px; position: relative; }
+.hydro svg { display: block; width: 100%; height: auto; overflow: visible; }
+.hydro .obs { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+.hydro .fc { fill: none; stroke: var(--warm); stroke-width: 2.5; stroke-dasharray: 6 5; }
+.hydro .b1 { fill: var(--warm); opacity: .13; }
+.hydro .b2 { fill: var(--warm); opacity: .2; }
+.hydro .now { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 3 4; }
+.hydro .base { stroke: var(--line); stroke-width: 1; }
+.hydro text { font: 600 12px "Inter", sans-serif; fill: var(--muted); letter-spacing: .04em; }
+.hydro .t-fc { fill: var(--warm); }
+.hydro .t-obs { fill: var(--accent); }
+.js .hydro .obs { stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: draw 2.4s ease-out .2s forwards; }
+.js .hydro .fcgroup { opacity: 0; animation: fade 1s ease-out 2.4s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade { to { opacity: 1; } }
+
+/* Stats */
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line); border-radius: 16px; background: var(--surface);
+  box-shadow: var(--shadow); margin: 8px 0 0; overflow: hidden;
+}
+.stat { padding: 22px 24px; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; }
+.stat b { display: block; font-family: "Fraunces", Georgia, serif; font-size: 32px; font-weight: 600; color: var(--text); line-height: 1.1; }
+.stat span { font-size: 14px; color: var(--muted); }
+
+/* Sections */
+section { padding: 88px 0 0; }
+.section-head { margin-bottom: 32px; }
+.kicker { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+.section-head h2 { font-size: clamp(28px, 3.6vw, 38px); margin: 0; }
+.section-head p { color: var(--muted); max-width: 640px; margin: 10px 0 0; font-size: 17px; }
+
+/* Featured case study */
+.feature {
+  display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: 36px; box-shadow: var(--shadow);
+}
+.feature h3 { font-size: 24px; margin: 0 0 6px; }
+.feature .meta { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.feature ul.points { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 12px; }
+.feature ul.points li { position: relative; padding-left: 22px; }
+.feature ul.points li::before {
+  content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 2px;
+  background: var(--accent); transform: rotate(45deg);
+}
+.feature ul.points b { color: var(--text); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 12.5px; font-weight: 500; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+
+.viewer .tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.viewer .tabs button {
+  font: 600 13px "Inter", sans-serif; padding: 7px 14px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface-2); color: var(--muted);
+}
+.viewer .tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.viewer .panel[hidden] { display: none; }
+figure { margin: 0; }
+.figframe {
+  display: block; width: 100%; padding: 0; cursor: zoom-in;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+}
+.figframe img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 13.5px; color: var(--muted); margin-top: 10px; }
+
+
+/* Pipeline */
+.pipeline { display: grid; }
+.stage { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 36px; box-shadow: var(--shadow); }
+.stage.feature { grid-template-columns: 5fr 6fr; align-items: center; }
+.stage-label {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
+}
+.stage-label .num {
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--bg); font-size: 13px; letter-spacing: 0;
+}
+.stage-intro { color: var(--muted); margin: 0 0 18px; max-width: 720px; }
+.stage .meta { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.stage h3 { font-size: 24px; margin: 0 0 6px; }
+
+.flow { position: relative; height: 84px; display: flex; align-items: center; justify-content: center; }
+.flow-line {
+  position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%);
+  background: repeating-linear-gradient(to bottom, var(--accent) 0 6px, transparent 6px 12px);
+  background-size: 2px 12px; opacity: .7;
+}
+.js .flow-line { animation: flow 0.9s linear infinite; }
+.flow-line::after {
+  content: ""; position: absolute; left: 50%; bottom: -2px; transform: translateX(-50%);
+  border: 7px solid transparent; border-top: 9px solid var(--accent); border-bottom: 0;
+}
+@keyframes flow { to { background-position: 0 12px; } }
+.flow-text {
+  position: relative; background: var(--bg); padding: 4px 14px; border-radius: 999px;
+  border: 1px solid var(--line); font-size: 13px; font-weight: 500; color: var(--muted);
+}
+
+.arch { position: relative; }
+.hotspot {
+  position: absolute; transform: translate(-50%, -50%); width: 26px; height: 26px; padding: 0;
+  border-radius: 50%; border: 2px solid #fff; background: var(--warm); color: #fff; cursor: pointer;
+  font: 700 13px "Inter", sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.hotspot::before {
+  content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--warm);
+  opacity: 0; animation: ping 2.2s ease-out infinite;
+}
+@keyframes ping { 0% { transform: scale(.7); opacity: .8; } 100% { transform: scale(1.5); opacity: 0; } }
+.hotspot.active, .hotspot:hover, .hotspot:focus-visible { background: var(--accent); outline: none; }
+.legend { margin: 18px 0 8px; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; counter-reset: lg; }
+.legend li {
+  position: relative; padding: 10px 12px 10px 46px; border-radius: 10px; font-size: 14.5px; color: var(--muted);
+  border: 1px solid transparent; transition: background .2s, border-color .2s; counter-increment: lg;
+}
+.legend li::before {
+  content: counter(lg); position: absolute; left: 12px; top: 10px; width: 24px; height: 24px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--warm-soft); color: var(--warm); font-weight: 700; font-size: 12.5px;
+}
+.legend li b { color: var(--text); }
+.legend li.active { background: var(--accent-soft); border-color: var(--accent); }
+.legend li.active::before { background: var(--accent); color: var(--bg); }
+
+/* Split study */
+.split { display: grid; grid-template-columns: 7fr 5fr; gap: 40px; align-items: center; margin-top: 28px; padding: 36px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); box-shadow: var(--shadow); }
+.split h3 { font-size: 22px; margin: 0 0 6px; }
+.split p { margin: 0 0 16px; }
+
+/* Project cards */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 26px; display: flex; flex-direction: column; box-shadow: var(--shadow);
+  transition: transform .2s, border-color .2s;
+}
+.card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.card .icon { width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 18px; }
+.card h3 { font-size: 18px; margin: 0 0 4px; }
+.card .when { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.card .metric { font-family: "Fraunces", Georgia, serif; font-size: 30px; font-weight: 600; color: var(--warm); line-height: 1.1; }
+.card .metric-label { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.card p { font-size: 15px; color: var(--muted); margin: 0 0 18px; flex: 1; }
+
+/* Publications */
+.pubs { display: grid; gap: 12px; }
+.pub {
+  display: grid; grid-template-columns: 72px 1fr; gap: 20px; align-items: start;
+  padding: 20px 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+}
+.pub .year { font-family: "Fraunces", Georgia, serif; font-size: 22px; font-weight: 600; color: var(--accent); }
+.pub .title { font-weight: 600; color: var(--text); }
+.pub a.title:hover { color: var(--accent); }
+.pub .authors { font-size: 14.5px; color: var(--muted); margin-top: 4px; }
+.pub .venue { font-size: 14.5px; font-style: italic; color: var(--muted); }
+.badge { display: inline-block; font-size: 11.5px; font-weight: 600; font-style: normal; padding: 1px 8px; border-radius: 999px; margin-left: 6px; background: var(--warm-soft); color: var(--warm); vertical-align: 1px; }
+
+/* Education timeline */
+.timeline { position: relative; padding-left: 28px; display: grid; gap: 22px; }
+.timeline::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+.tl { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; }
+.tl::before { content: ""; position: absolute; left: -28px; top: 26px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
+.tl { display: flex; gap: 20px; align-items: center; }
+.tl .tl-body { flex: 1; min-width: 0; }
+.tl .logo {
+  flex: none; width: 64px; height: 64px; object-fit: contain; padding: 9px;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px;
+}
+.tl .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.tl h3 { font-size: 17px; margin: 0; }
+.tl .date { font-size: 14px; color: var(--muted); font-weight: 500; }
+.tl p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+
+/* Contact */
+.contact {
+  margin: 88px 0 0; padding: 48px; border-radius: 22px; text-align: center;
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface-2));
+  border: 1px solid var(--line);
+}
+.contact h2 { font-size: clamp(26px, 3.4vw, 34px); margin: 0 0 10px; }
+.contact p { color: var(--muted); margin: 0 auto 24px; max-width: 560px; font-size: 17px; }
+.contact .buttons { justify-content: center; }
+footer { padding: 40px 0 48px; color: var(--muted); font-size: 13.5px; text-align: center; }
+
+/* Lightbox */
+dialog.lightbox {
+  border: 0; padding: 0; background: transparent; max-width: min(96vw, 1600px); max-height: 92vh;
+}
+dialog.lightbox::backdrop { background: rgba(5, 10, 15, .82); }
+dialog.lightbox img { display: block; max-width: 100%; max-height: 86vh; border-radius: 10px; background: #fff; }
+dialog.lightbox p { color: #e6edf3; font-size: 14px; text-align: center; margin: 10px 0 0; }
+dialog.lightbox button {
+  position: fixed; top: 16px; right: 20px; width: 40px; height: 40px; border-radius: 50%;
+  border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 22px; cursor: pointer;
+}
+
+/* Reveal */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .js .hydro .obs, .js .hydro .fcgroup { animation: none; stroke-dashoffset: 0; opacity: 1; }
+  .js .flow-line, .hotspot::before { animation: none; }
+  .card:hover, .btn:hover { transform: none; }
+}
+
+@media (max-width: 900px) {
+  .feature, .split, .stage.feature { grid-template-columns: minmax(0, 1fr); padding: 24px; gap: 28px; }
+  .stage { padding: 24px; }
+  .legend { grid-template-columns: minmax(0, 1fr); }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 720px) {
+  .wrap { padding: 0 16px; }
+  nav ul { display: none; }
+  .hero { padding-top: 40px; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .portrait-wrap { width: 150px; height: 150px; justify-self: start; order: -1; }
+  .hero .lead { font-size: 17px; }
+  .hydro { margin-top: 36px; }
+  .hydro text { display: none; }
+  .hotspot { width: 22px; height: 22px; font-size: 11px; border-width: 1.5px; }
+  .flow { height: 70px; }
+  .stat { padding: 18px; }
+  .stat b { font-size: 26px; }
+  section { padding-top: 64px; }
+  .pub { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 18px; }
+  .tl { gap: 14px; padding: 16px; }
+  .tl .logo { width: 48px; height: 48px; padding: 6px; }
+  .contact { padding: 32px 20px; }
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M4 20 L10 18 L14 9 L18 19 L22 15 L28 17" stroke="var(--bg)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Elnaz Heidari
+    </a>
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Machine Learning Researcher · Ph.D.</div>
+        <h1 class="serif">Elnaz Heidari</h1>
+        <p class="lead">
+          I build deep learning models that <strong>forecast how physical systems evolve</strong>.
+          My Ph.D. work uses physics-guided, explainable Transformers to predict floods up to 24 hours ahead with calibrated uncertainty.
+          The models <strong>outperform NOAA's operational National Water Model</strong> and transfer zero-shot to regions they never saw in training.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="assets/Elnaz_Heidari_Resume.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+            Resume
+          </a>
+          <a class="btn" href="https://scholar.google.com/citations?user=7KmNq-0AAAAJ&amp;hl=en">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm-6.82 9.73V16.5L12 20l6.82-3.5v-3.77L12 16.5l-6.82-3.77z"/></svg>
+            Scholar
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/elnaz-heidari-a3386b206/">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://github.com/elnazhdr">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <img src="assets/img/elnaz.jpg" alt="Portrait of Elnaz Heidari" width="640" height="640">
+      </div>
+    </div>
+
+    <div class="hydro" aria-hidden="true">
+      <svg viewBox="0 40 1200 190" preserveAspectRatio="none">
+        <line class="base" x1="0" y1="220" x2="1200" y2="220"/>
+        <path class="obs" d="M0,141.6 L10,139.4 L20,137.5 L30,136.0 L40,134.9 L50,134.1 L60,133.8 L70,133.8 L80,134.1 L90,134.7 L100,135.5 L110,136.4 L120,137.5 L130,138.5 L140,139.5 L150,140.5 L160,141.2 L170,141.8 L180,142.1 L190,142.1 L200,141.9 L210,141.3 L220,140.1 L230,138.0 L240,134.6 L250,129.2 L260,121.5 L270,112.1 L280,102.5 L290,94.9 L300,91.5 L310,93.2 L320,99.2 L330,107.4 L340,115.8 L350,122.8 L360,128.1 L370,131.9 L380,134.9 L390,137.4 L400,139.7 L410,141.7 L420,143.0 L430,143.1 L440,141.5 L450,137.3 L460,130.4 L470,120.7 L480,109.0 L490,96.8 L500,86.2 L510,79.2 L520,77.4 L530,81.3 L540,90.3 L550,103.0 L560,117.1 L570,130.7 L580,142.3 L590,151.0 L600,156.8 L610,160.1 L620,161.4 L630,161.4 L640,160.7 L650,159.6 L660,158.5 L670,157.5 L680,156.7 L690,156.1 L700,155.8 L710,155.8 L720,156.0 L730,156.4 L740,157.0 L750,157.7 L760,158.5 L770,159.3 L780,160.0"/>
+        <g class="fcgroup">
+          <path class="b1" d="M780,159.9 L790,158.9 L800,157.8 L810,156.5 L820,155.1 L830,153.2 L840,150.8 L850,147.7 L860,143.7 L870,138.5 L880,132.0 L890,124.3 L900,115.6 L910,106.2 L920,96.9 L930,88.2 L940,81.0 L950,76.1 L960,73.8 L970,74.3 L980,77.4 L990,82.8 L1000,89.7 L1010,97.2 L1020,104.8 L1030,111.7 L1040,117.6 L1050,122.3 L1060,125.7 L1070,127.9 L1080,129.2 L1090,129.8 L1100,129.9 L1110,129.5 L1120,129.0 L1130,128.3 L1140,127.5 L1150,126.6 L1160,125.7 L1170,124.8 L1180,123.9 L1190,123.1 L1200,122.2 L1200,214.6 L1190,213.3 L1180,211.9 L1170,210.6 L1160,209.3 L1150,208.0 L1140,206.7 L1130,205.3 L1120,203.8 L1110,202.1 L1100,200.3 L1090,198.0 L1080,195.2 L1070,191.7 L1060,187.3 L1050,181.7 L1040,174.8 L1030,166.7 L1020,157.6 L1010,147.8 L1000,138.1 L990,129.0 L980,121.4 L970,116.1 L960,113.4 L950,113.5 L940,116.2 L930,121.2 L920,127.7 L910,134.8 L900,142.0 L890,148.5 L880,154.0 L870,158.3 L860,161.3 L850,163.1 L840,164.0 L830,164.2 L820,163.9 L810,163.1 L800,162.2 L790,161.1 L780,159.9 Z"/>
+          <path class="b2" d="M780,159.9 L790,159.4 L800,158.9 L810,158.2 L820,157.3 L830,156.0 L840,154.1 L850,151.6 L860,148.1 L870,143.4 L880,137.5 L890,130.4 L900,122.2 L910,113.4 L920,104.6 L930,96.4 L940,89.8 L950,85.4 L960,83.7 L970,84.7 L980,88.4 L990,94.3 L1000,101.8 L1010,109.9 L1020,118.0 L1030,125.5 L1040,131.9 L1050,137.1 L1060,141.1 L1070,143.9 L1080,145.7 L1090,146.9 L1100,147.5 L1110,147.7 L1120,147.7 L1130,147.5 L1140,147.3 L1150,147.0 L1160,146.6 L1170,146.3 L1180,145.9 L1190,145.6 L1200,145.3 L1200,191.5 L1190,190.7 L1180,189.9 L1170,189.2 L1160,188.4 L1150,187.7 L1140,186.9 L1130,186.0 L1120,185.1 L1110,184.0 L1100,182.7 L1090,181.0 L1080,178.7 L1070,175.8 L1060,171.9 L1050,166.8 L1040,160.5 L1030,153.0 L1020,144.4 L1010,135.2 L1000,126.0 L990,117.4 L980,110.4 L970,105.6 L960,103.5 L950,104.1 L940,107.4 L930,112.9 L920,120.0 L910,127.7 L900,135.4 L890,142.5 L880,148.5 L870,153.3 L860,156.9 L850,159.3 L840,160.7 L830,161.5 L820,161.7 L810,161.5 L800,161.1 L790,160.5 L780,159.9 Z"/>
+          <path class="fc" d="M780,159.9 L790,160.0 L800,160.0 L810,159.8 L820,159.5 L830,158.7 L840,157.4 L850,155.4 L860,152.5 L870,148.4 L880,143.0 L890,136.4 L900,128.8 L910,120.5 L920,112.3 L930,104.7 L940,98.6 L950,94.8 L960,93.6 L970,95.2 L980,99.4 L990,105.9 L1000,113.9 L1010,122.5 L1020,131.2 L1030,139.2 L1040,146.2 L1050,152.0 L1060,156.5 L1070,159.8 L1080,162.2 L1090,163.9 L1100,165.1 L1110,165.8 L1120,166.4 L1130,166.8 L1140,167.1 L1150,167.3 L1160,167.5 L1170,167.7 L1180,167.9 L1190,168.2 L1200,168.4"/>
+          <line class="now" x1="780" y1="50" x2="780" y2="220"/>
+          <text x="790" y="60">NOW</text>
+          <text class="t-fc" x="1000" y="62">FORECAST · 10–90%</text>
+        </g>
+        <text class="t-obs" x="420" y="66">OBSERVED FLOW</text>
+      </svg>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><b>5</b><span>peer-reviewed publications</span></div>
+      <div class="stat"><b>10</b><span>unseen regions forecast zero-shot</span></div>
+      <div class="stat"><b>24 h</b><span>probabilistic forecast horizon</span></div>
+      <div class="stat"><b>NWM v3.0</b><span>NOAA's operational model, outperformed</span></div>
+    </div>
+  </header>
+
+  <section id="research">
+    <div class="section-head reveal">
+      <p class="kicker">Featured research</p>
+      <h2 class="serif">Explainable Transformers for flood forecasting</h2>
+      <p>Forecasting river flow from weather and landscape data, explaining each prediction, and working in places with little or no training data.</p>
+    </div>
+
+    <div class="pipeline">
+      <div class="stage feature reveal">
+        <div>
+          <div class="stage-label"><span class="num">1</span>Inputs</div>
+          <h3>Hydro-Transformers</h3>
+          <div class="meta">Ph.D. research · Clemson University · 2022–2026</div>
+          <ul class="points">
+            <li>One <b>Temporal Fusion Transformer</b> trained jointly on <b>15 U.S. East and Gulf Coast regions</b>, not one model per river.</li>
+            <li><b>12 time-varying</b> weather inputs (precipitation, temperature, humidity, wind, pressure, radiation) over a 30-day lookback.</li>
+            <li><b>27 static</b> catchment attributes: topography, land cover, soil, and climate.</li>
+          </ul>
+          <div class="tags"><span class="tag">PyTorch</span><span class="tag">Transformers</span><span class="tag">CUDA · HPC</span></div>
+        </div>
+        <figure>
+          <button class="figframe" data-full="assets/img/study_area_map.jpg" aria-label="Enlarge study area map">
+            <img src="assets/img/study_area_map.jpg" alt="Map of the eastern U.S. with 15 training gauges as red circles and 10 unseen test gauges as blue stars" width="1800" height="1407">
+          </button>
+          <figcaption>15 training gauges (red) and 10 unseen test gauges (blue). From Heidari &amp; Khan (2026), <em>JAWRA</em>.</figcaption>
+        </figure>
+      </div>
+
+      <div class="flow" aria-hidden="true"><span class="flow-line"></span><span class="flow-text">39 features per catchment, hourly</span></div>
+
+      <div class="stage reveal">
+        <div class="stage-label"><span class="num">2</span>Model: Temporal Fusion Transformer</div>
+        <p class="stage-intro">The model selects the inputs that matter, encodes the past, attends across time, and outputs quantiles. Hover over or tap the numbered points to explore each component.</p>
+        <div class="arch">
+          <button class="figframe" data-full="assets/img/tft_architecture.png" aria-label="Enlarge Temporal Fusion Transformer architecture">
+            <img src="assets/img/tft_architecture.png" alt="Temporal Fusion Transformer architecture: variable selection, LSTM encoder and decoder, gated residual networks, and interpretable multi-head attention producing quantile outputs" width="1800" height="956" loading="lazy">
+          </button>
+          <button class="hotspot" style="left:28.4%;top:2.2%" aria-describedby="h1"><span>1</span></button>
+          <button class="hotspot" style="left:13%;top:15%" aria-describedby="h2"><span>2</span></button>
+          <button class="hotspot" style="left:28.4%;top:29.5%" aria-describedby="h3"><span>3</span></button>
+          <button class="hotspot" style="left:49.8%;top:14.5%" aria-describedby="h4"><span>4</span></button>
+          <button class="hotspot" style="left:61.4%;top:21%" aria-describedby="h5"><span>5</span></button>
+          <button class="hotspot" style="left:97%;top:36.5%" aria-describedby="h6"><span>6</span></button>
+        </div>
+        <ol class="legend">
+          <li id="h1"><b>Static covariate encoders.</b> Catchment attributes condition every part of the network, so one model adapts to each river.</li>
+          <li id="h2"><b>Variable selection.</b> Learns which weather inputs matter at each time step. This is where the feature importance comes from.</li>
+          <li id="h3"><b>LSTM encoder–decoder.</b> Encodes the 30-day past and decodes known future inputs to capture local temporal patterns.</li>
+          <li id="h4"><b>Gated residual networks.</b> Let the model skip nonlinear processing it doesn't need, which keeps it efficient.</li>
+          <li id="h5"><b>Interpretable multi-head attention.</b> Finds long-range dependencies, and its weights show which past hours drive each forecast.</li>
+          <li id="h6"><b>Quantile outputs.</b> The 10th, 50th, and 90th percentiles give every 1–24 h forecast an uncertainty band.</li>
+        </ol>
+        <figcaption>Architecture figure from Heidari &amp; Khan (2026), <em>JAWRA</em>.</figcaption>
+      </div>
+
+      <div class="flow" aria-hidden="true"><span class="flow-line"></span><span class="flow-text">quantile forecasts, 1–24 h ahead</span></div>
+
+      <div class="stage feature reveal">
+        <figure>
+          <button class="figframe" data-full="assets/img/forecast_setup.png" aria-label="Enlarge forecast setup diagram">
+            <img src="assets/img/forecast_setup.png" alt="Diagram of a 30-day lookback window feeding a model that outputs a 24-hour probabilistic discharge forecast with 10th, 50th, and 90th percentile bands" width="1800" height="1091" loading="lazy">
+          </button>
+          <figcaption>A sliding 30-day window produces 24 hourly forecasts with prediction intervals. From Heidari &amp; Khan (2026), <em>JAWRA</em>.</figcaption>
+        </figure>
+        <div>
+          <div class="stage-label"><span class="num">3</span>Output</div>
+          <h3>Probabilistic, explainable forecasts</h3>
+          <ul class="points">
+            <li><b>Outperforms NOAA's National Water Model</b> (v3.0) across forecast lead times.</li>
+            <li><b>Zero-shot transfer:</b> the trained model forecasts at 10 gauges it never saw, which helps in data-scarce catchments.</li>
+            <li><b>Calibrated uncertainty</b> from quantile regression, which matters for flood warnings.</li>
+            <li><b>Explainable:</b> attention and variable selection show which drivers matter in each region.</li>
+          </ul>
+          <div class="tags"><span class="tag">Quantile regression</span><span class="tag">Transfer learning</span><span class="tag">Explainable AI</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split reveal">
+      <figure>
+        <button class="figframe" data-full="assets/img/rnn_pipeline.png" aria-label="Enlarge flood prediction pipeline">
+          <img src="assets/img/rnn_pipeline.png" alt="Flood prediction pipeline: event data feeds vanilla RNN, LSTM, and GRU models, which are compared with the National Water Model on flood hydrographs" width="1800" height="1012" loading="lazy">
+        </button>
+        <figcaption>From Heidari, Samadi &amp; Khan (2025), <em>Hydrology</em> (CC BY 4.0).</figcaption>
+      </figure>
+      <div>
+        <div class="meta" style="font-size:14px;color:var(--muted);margin-bottom:6px">2022–2025 · Published in <em>Hydrology</em></div>
+        <h3>Recurrent networks for flood prediction</h3>
+        <p>A GPU-based framework for flood modeling and uncertainty quantification in four South Carolina watersheds, trained on NOAA reanalysis weather data and USGS gauge observations.</p>
+        <p>I compared vanilla RNN, LSTM, and GRU models on real flood events and benchmarked each one against the National Water Model.</p>
+        <div class="tags"><span class="tag">LSTM</span><span class="tag">GRU</span><span class="tag">Uncertainty</span><span class="tag">HPC</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head reveal">
+      <p class="kicker">Beyond forecasting</p>
+      <h2 class="serif">Selected projects</h2>
+      <p>Graduate work at Georgia Tech in reinforcement learning, generative modeling, and NLP.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div>
+        <h3>Reinforcement learning &amp; state estimation</h3>
+        <div class="when">2026</div>
+        <div class="metric">223.7</div>
+        <div class="metric-label">mean return, PPO on LunarLander (solved ≥ 200)</div>
+        <p>I implemented PPO from scratch in PyTorch. I also benchmarked value and policy iteration against Q-learning and SARSA for traffic-signal control, and built Kalman and particle filters for tracking and localization.</p>
+        <div class="tags"><span class="tag">PPO</span><span class="tag">Q-learning</span><span class="tag">Kalman</span><span class="tag">Particle filter</span></div>
+      </article>
+      <article class="card reveal">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Generative models</h3>
+        <div class="when">2025</div>
+        <div class="metric">3 families</div>
+        <div class="metric-label">VAEs, GANs, and diffusion models compared</div>
+        <p>I implemented and benchmarked each family on MNIST and Fashion-MNIST. Diffusion models gave the sharpest, most stable samples, GANs risked mode collapse, and VAEs traded sharpness for diversity.</p>
+        <div class="tags"><span class="tag">Diffusion</span><span class="tag">GANs</span><span class="tag">VAEs</span></div>
+      </article>
+      <article class="card reveal">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <h3>Language models &amp; embeddings</h3>
+        <div class="when">2025</div>
+        <div class="metric">−25%</div>
+        <div class="metric-label">test perplexity from architecture and training changes</div>
+        <p>I trained RNN, LSTM, and attention-based language models. I also trained CBOW and Skip-Gram embeddings on 2M+ tokens, reaching up to 70% analogy accuracy.</p>
+        <div class="tags"><span class="tag">NLP</span><span class="tag">LSTMs</span><span class="tag">Attention</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="section-head reveal">
+      <p class="kicker">Peer-reviewed</p>
+      <h2 class="serif">Publications</h2>
+    </div>
+    <div class="pubs">
+      <div class="pub reveal">
+        <div class="year">2026</div>
+        <div>
+          <a class="title" href="https://doi.org/10.1111/1752-1688.70115">Probabilistic Sub-Daily Streamflow Forecasting in Data-Scarce Catchments Through a Zero-Shot Inductive Transfer Learning Approach</a>
+          <div class="authors"><b>Heidari, E.</b>, and Khan, A. A.</div>
+          <div class="venue">Journal of the American Water Resources Association (JAWRA)</div>
+        </div>
+      </div>
+      <div class="pub reveal">
+        <div class="year">2026</div>
+        <div>
+          <span class="title">Interpretable Hourly Flood Forecasting Leveraging Deep Learning Recurrence and Attention Mechanisms</span>
+          <div class="authors"><b>Heidari, E.</b>, and Khan, A. A.</div>
+          <div class="venue">Journal of Water Resources Planning and Management <span class="badge">Accepted</span></div>
+        </div>
+      </div>
+      <div class="pub reveal">
+        <div class="year">2025</div>
+        <div>
+          <a class="title" href="https://www.mdpi.com/2306-5338/12/4/90">Leveraging Recurrent Neural Networks for Flood Prediction and Assessment</a>
+          <div class="authors"><b>Heidari, E.</b>, Samadi, V., and Khan, A. A.</div>
+          <div class="venue">Hydrology, 12(4), 90</div>
+        </div>
+      </div>
+      <div class="pub reveal">
+        <div class="year">2023</div>
+        <div>
+          <span class="title">Flood Modeling Across Mountainous and Coastal Watersheds: Coupling Data-Driven and Catchment Physical Attributes</span>
+          <div class="authors"><b>Heidari, E.</b>, Samadi, V., and Popescu, I.</div>
+          <div class="venue">AGU Fall Meeting</div>
+        </div>
+      </div>
+      <div class="pub reveal">
+        <div class="year">2023</div>
+        <div>
+          <span class="title">Application of Deep Recurrent Neural Networks for Flood Prediction and Assessment</span>
+          <div class="authors"><b>Heidari, E.</b>, and Samadi, V.</div>
+          <div class="venue">EGU General Assembly</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head reveal">
+      <p class="kicker">Background</p>
+      <h2 class="serif">Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal">
+        <img class="logo" src="assets/img/logos/clemson.svg" alt="Clemson University logo" width="250" height="239">
+        <div class="tl-body">
+          <div class="row"><h3>Ph.D. in Engineering, Clemson University</h3><span class="date">2022 – 2026</span></div>
+          <p>Dissertation: Explainable physics-guided Transformers for large-scale spatiotemporal flood forecasting.</p>
+        </div>
+      </div>
+      <div class="tl reveal">
+        <img class="logo" src="assets/img/logos/georgia_tech.svg" alt="Georgia Tech logo" width="250" height="157">
+        <div class="tl-body">
+          <div class="row"><h3>M.Sc. in Computer Science, Georgia Institute of Technology</h3><span class="date">2024 – 2026</span></div>
+          <p>Machine learning, deep learning, reinforcement learning, AI for robotics, and NLP.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact reveal" id="contact">
+    <h2 class="serif">Let's talk</h2>
+    <p>I'm open to machine learning research and applied science roles in the SF Bay Area or remote.</p>
+    <div class="buttons">
+      <a class="btn primary" href="mailto:elnzheidar@gmail.com">elnzheidar@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/elnaz-heidari-a3386b206/">LinkedIn</a>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Elnaz Heidari</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged figure">
+  <button type="button" aria-label="Close">×</button>
+  <img alt="">
+  <p></p>
+</dialog>
+
+<script>
+// Architecture hotspots: link each point to its legend entry
+document.querySelectorAll('.hotspot').forEach(h => {
+  const item = document.getElementById(h.getAttribute('aria-describedby'));
+  const on = () => { document.querySelectorAll('.hotspot.active, .legend li.active').forEach(x => x.classList.remove('active')); h.classList.add('active'); item.classList.add('active'); };
+  h.addEventListener('mouseenter', on);
+  h.addEventListener('focus', on);
+  h.addEventListener('click', on);
+  item.addEventListener('mouseenter', () => { on(); });
+});
+
+// Lightbox
+const box = document.getElementById('lightbox');
+document.querySelectorAll('.figframe').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    box.querySelector('img').src = btn.dataset.full;
+    box.querySelector('img').alt = img.alt;
+    const cap = btn.closest('figure').querySelector('figcaption');
+    box.querySelector('p').textContent = cap ? cap.textContent : '';
+    box.showModal();
+  });
+});
+box.querySelector('button').addEventListener('click', () => box.close());
+box.addEventListener('click', e => { if (e.target === box) box.close(); });
+
+// Reveal on scroll
+const els = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+} else {
+  els.forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>
