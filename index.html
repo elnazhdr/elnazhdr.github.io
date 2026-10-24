@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Elnaz Heidari</title>
-<meta name="description" content="Elnaz Heidari is a machine learning researcher who builds physics-guided, explainable deep learning models for spatiotemporal forecasting.">
+<meta name="description" content="Elnaz Heidari is a machine learning researcher who builds explainable Transformer models for large-scale time-series forecasting.">
 <meta property="og:title" content="Elnaz Heidari, Machine Learning Researcher">
-<meta property="og:description" content="Physics-guided, explainable Transformers for spatiotemporal forecasting. Ph.D., Clemson · M.Sc. CS, Georgia Tech.">
+<meta property="og:description" content="Explainable Transformers for large-scale time-series forecasting. Ph.D., Clemson · M.Sc. CS, Georgia Tech.">
 <meta property="og:image" content="https://elnazhdr.github.io/assets/img/elnaz.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6e8f'/%3E%3Cpath d='M4 20 L10 18 L14 9 L18 19 L22 15 L28 17' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -385,12 +385,12 @@ dialog.lightbox button {
   <header class="hero">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow"><span class="dot"></span>Machine Learning Researcher · Ph.D.</div>
+        <div class="eyebrow"><span class="dot"></span>Machine Learning Researcher · Time-Series Forecasting</div>
         <h1 class="serif">Elnaz Heidari</h1>
         <p class="lead">
-          I build deep learning models that <strong>forecast how physical systems evolve</strong>.
-          My Ph.D. work uses physics-guided, explainable Transformers to predict floods up to 24 hours ahead with calibrated uncertainty.
-          The models <strong>outperform NOAA's operational National Water Model</strong> and transfer zero-shot to regions they never saw in training.
+          I build deep learning models for <strong>large-scale time-series forecasting</strong>.
+          My Ph.D. work uses explainable, physics-guided Transformers to forecast hourly river flow up to 24 hours ahead with calibrated uncertainty.
+          The model <strong>cuts error by 30% compared with NOAA's operational National Water Model</strong> and transfers zero-shot to regions it never saw in training.
         </p>
         <div class="buttons">
           <a class="btn primary" href="assets/Elnaz_Heidari_Resume.pdf">
@@ -436,22 +436,22 @@ dialog.lightbox button {
       <div class="stat"><b>5</b><span>peer-reviewed publications</span></div>
       <div class="stat"><b>10</b><span>unseen regions forecast zero-shot</span></div>
       <div class="stat"><b>24 h</b><span>probabilistic forecast horizon</span></div>
-      <div class="stat"><b>NWM v3.0</b><span>NOAA's operational model, outperformed</span></div>
+      <div class="stat"><b>−30%</b><span>RMSE vs. NOAA's operational model</span></div>
     </div>
   </header>
 
   <section id="research">
     <div class="section-head reveal">
       <p class="kicker">Featured research</p>
-      <h2 class="serif">Explainable Transformers for flood forecasting</h2>
-      <p>Forecasting river flow from weather and landscape data, explaining each prediction, and working in places with little or no training data.</p>
+      <h2 class="serif">Explainable Transformers for time-series forecasting</h2>
+      <p>One model forecasts hourly series at many locations, explains each prediction, and works where there is little or no training data. The application is river flow, driven by weather and landscape data.</p>
     </div>
 
     <div class="pipeline">
       <div class="stage feature reveal">
         <div>
           <div class="stage-label"><span class="num">1</span>Inputs</div>
-          <h3>Hydro-Transformers</h3>
+          <h3>Large-scale time-series forecasting</h3>
           <div class="meta">Ph.D. research · Clemson University · 2022–2026</div>
           <ul class="points">
             <li>One <b>Temporal Fusion Transformer</b> trained jointly on <b>15 U.S. East and Gulf Coast regions</b>, not one model per river.</li>
@@ -508,7 +508,7 @@ dialog.lightbox button {
           <div class="stage-label"><span class="num">3</span>Output</div>
           <h3>Probabilistic, explainable forecasts</h3>
           <ul class="points">
-            <li><b>Outperforms NOAA's National Water Model</b> (v3.0) across forecast lead times.</li>
+            <li><b>30% lower RMSE than NOAA's National Water Model</b> (v3.0), the operational U.S. forecast system.</li>
             <li><b>Zero-shot transfer:</b> the trained model forecasts at 10 gauges it never saw, which helps in data-scarce catchments.</li>
             <li><b>Calibrated uncertainty</b> from quantile regression, which matters for flood warnings.</li>
             <li><b>Explainable:</b> attention and variable selection show which drivers matter in each region.</li>
@@ -527,7 +527,7 @@ dialog.lightbox button {
       </figure>
       <div>
         <div class="meta" style="font-size:14px;color:var(--muted);margin-bottom:6px">2022–2025 · Published in <em>Hydrology</em></div>
-        <h3>Recurrent networks for flood prediction</h3>
+        <h3>Recurrent networks for time-series forecasting</h3>
         <p>A GPU-based framework for flood modeling and uncertainty quantification in four South Carolina watersheds, trained on NOAA reanalysis weather data and USGS gauge observations.</p>
         <p>I compared vanilla RNN, LSTM, and GRU models on real flood events and benchmarked each one against the National Water Model.</p>
         <div class="tags"><span class="tag">LSTM</span><span class="tag">GRU</span><span class="tag">Uncertainty</span><span class="tag">HPC</span></div>
